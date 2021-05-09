@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-final class Garzone
+class Garzone
 {
     private $nome;
 
@@ -12,10 +12,8 @@ final class Garzone
         return new self($nome);
     }
 
-    public function installaCaldaia(): string
+    public function installaCaldaia($caldaia): string
     {
-        
-        $caldaia = new Caldaia();
         
         $risultato = $caldaia->avvia();
         echo $risultato . PHP_EOL;

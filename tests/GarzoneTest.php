@@ -4,7 +4,7 @@ include(__DIR__ . '/../src/Caldaia.php');
 
 use PHPUnit\Framework\TestCase;
 
-final class GarzoneTest extends TestCase
+class GarzoneTest extends TestCase
 {
     /**
      * Test sul costruttore
@@ -28,9 +28,19 @@ final class GarzoneTest extends TestCase
 
     public function testInstallaCaldaia(): void
     {
+
+        $stub = $this->createMock(Caldaia::class);
+
+        // Configure the stub.
+        $stub->method('avvia')
+             ->willReturn('Funziona');
+
+        // solo per rendere l'idea...
+        // $this->assertEquals('Funziona', $stub->avvia());
+
         $this->assertEquals(
             'Funziona',
-            Garzone::installaCaldaia()
+            Garzone::installaCaldaia($stub)
         );
     }
 }

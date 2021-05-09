@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-final class Caldaia
+class Caldaia
 {
 
 	private $workingStatus;
